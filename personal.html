@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui"  />
+<meta name="format-detection" content="telephone=no">
+<meta content="email=no" name="format-detection" />
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-1.8.2.min.js"></script>
+<title>untitled</title>
+</head>
+<body>
+<script>
+(function (doc, win) {
+       var docEl = doc.documentElement,
+               resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+               recalc = function () {
+                   var clientWidth = docEl.clientWidth;
+                   if (!clientWidth) return;
+                   if(clientWidth >=750){
+                   clientWidth = 750;
+                   }
+                   docEl.style.fontSize = 20 * (clientWidth / 375) + 'px';
+               };
+       if (!doc.addEventListener) return;
+       win.addEventListener(resizeEvt, recalc, false);
+       doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+</script>
+<div class="container">
+  <div class="permain">
+    <div class="personhead" style="background:url(images/perbg.jpg) no-repeat center center;background-size: cover;">
+      <a href="personal_set.html" class="setbtn"><img src = "images/setbtn.png"></a>
+      <div class="linear"></div>
+      <div class="indivbox">
+        <div class="avatar"><img src = "images/avatar01.jpg"></div>
+        <div class="text">
+          <h1 class="nickname">毁人不倦-haha</h1>
+          <div class="signature">
+            <div class="con">这家伙很懒,什么都没有留下</div>
+          </div>
+        </div>        
+      </div>
+      <ul class="follower_fans">
+        <li class="foll"><span>140</span> 关注</li>
+        <li class="fans"><span>2455</span> 粉丝</li>
+      </ul>
+    </div>
+  </div>
+  <div class="perlist">
+    <div class="con">
+      <ul>
+        <li><em><img src="images/personico01.png"></em><a href="">我的动态 (橙子树）</a></li>
+        <li><em><img src="images/personico02.png"></em><a href="">我的消息</a></li>
+        <li><em><img src="images/personico03.png"></em><a href="">我的收藏</a></li>
+        <li><em class="last"><img src="images/personico04.png"></em><a href="">素材库</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="menu">
+        <a href="index.html">
+          <dl>
+            <dt class="selbtn sel1"></dt>
+            <dd>首页</dd>
+          </dl>
+        </a>
+        <a href="tansuo.html">
+          <dl>
+            <dt class="selbtn sel2"></dt>
+            <dd>探索</dd>
+          </dl>
+        </a>
+        <a href="" class="takephotos"></a>
+        <a href="hotspot.html">
+          <dl>
+            <dt class="selbtn sel3"></dt>
+            <dd>热点</dd>
+          </dl>
+        </a>
+        <a href="personal.html" class="active">
+          <dl>
+            <dt class="selbtn sel4"></dt>
+            <dd>个人</dd>
+          </dl>
+        </a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

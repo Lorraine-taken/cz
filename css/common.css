@@ -1,0 +1,40 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,option,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,section, article, aside, header, footer, nav, dialog, figure,menu,hgroup{ margin:0; padding:0; border:0; -webkit-font-smoothing:antialiased;  }
+html{ -webkit-text-size-adjust:none;}
+body{font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft Yahei", "Wenquanyi Micro Hei", sans-serif; font-size:13px;background:#fff; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased;  font-smoothing: antialiased;  color:#333; }
+input,textarea{ resize:none; font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft Yahei", "Wenquanyi Micro Hei", sans-serif; border:0;}
+img{ border:none; vertical-align:middle; max-width: 100%;}
+ul,li{ list-style:none;}
+a{ text-decoration:none; outline:none; color:#333;}
+ a,input,textarea{text-decoration:none;outline:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+a:hover{ }
+input:focus,textarea:focus{ outline:none;}
+button{outline: none;}
+input{
+	outline:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	vertical-align: baseline;
+}
+.or{ overflow:hidden;}
+.fl{ float:left;}
+.fr{ float:right;}  
+h1,h2,h3{ font-weight:normal;}
+i,em{ font-style:normal;}
+.clear{clear: both;}
+@font-face {
+ font-family: 'nicedesign';
+ src: url('../font/nicedesign.otf');
+ src: url('../font/nicedesign.eot') format('embedded-opentype'),
+ url('../font/nicedesign') format('woff'),
+ url('../font/nicedesign.woff') format('truetype'),
+ url('../font/nicedesign') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+ .theme-mask{z-index:10000;position:fixed; _position:absolute;left:0;top:0;width:100%;height:100%;background:#000;opacity:0.5;filter:alpha(opacity=50);-moz-opacity:0.5; display:none; }
+.popover{ width:360px; height:400px; z-index:100001; position:fixed; top:50%;left:50%; background:#fff; margin:-200px 0 0 -180px;   box-shadow:1px 1px 6px 3px rgba(0,0,0,.2); display:none; text-align:center;}
+.popover dl{ margin-top:60px; font-size:14px; color:#333; line-height:40px;}
+.popover dl a{ width:110px; height:40px; background:#02090e; color:#fff; display:inline-block; border-radius:2px; font-size:14px;}
+ 
+#qrcode img {
+	margin: 0 auto;
+}

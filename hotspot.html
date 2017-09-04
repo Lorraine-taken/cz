@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui"  />
+<meta name="format-detection" content="telephone=no">
+<meta content="email=no" name="format-detection" />
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-1.8.2.min.js"></script>
+<title>untitled</title>
+</head>
+<body>
+<script>
+(function (doc, win) {
+       var docEl = doc.documentElement,
+               resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+               recalc = function () {
+                   var clientWidth = docEl.clientWidth;
+                   if (!clientWidth) return;
+                   if(clientWidth >=750){
+                   clientWidth = 750;
+                   }
+                   docEl.style.fontSize = 20 * (clientWidth / 375) + 'px';
+               };
+       if (!doc.addEventListener) return;
+       win.addEventListener(resizeEvt, recalc, false);
+       doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+</script>
+<div class="container">
+	<div class="headtitle head2">
+    <h1>热点视频推送</h1>
+    <a href="" class = "search"></a>
+	</div>  
+  <div class="hotvideo">
+    <ul>
+      <li class="vbox">
+        <div class="person">
+          <a href="" class="photo">
+            <img src = "images/hotved_ph01.jpg">
+          </a>
+          <h1>毁人不倦</h1>
+        </div>
+        <div class="vdbox">
+          <img src = "images/discimg01.jpg">
+          <div class="infor">
+            <p>三里屯在北京被人们所喜爱，来源于它的气质。三里屯在北京被人们所喜爱，来源于它的气质。</p>
+          </div>
+        </div>
+        <div class="operate">
+          <ul>
+            <dl class="comm">
+              <dt></dt>
+              <dd>956</dd>
+            </dl>
+            <dl class="collect">
+              <dt></dt>
+              <dd>1万+</dd>
+            </dl>            
+            <dl class="share">
+              <dt></dt>
+            </dl>
+          </ul>
+        </div>
+      </li>
+      <li class="vbox">
+        <div class="person">
+          <a href="" class="photo">
+            <img src = "images/hotved_ph02.jpg">
+          </a>
+          <h1>大栅栏唯一认证</h1>
+        </div>
+        <div class="vdbox">
+          <img src = "images/discimg01.jpg">
+          <div class="infor">
+            <p>三里屯在北京被人们所喜爱，来源于它的气质。三里屯在北京被人们所喜爱，来源于它的气质。</p>
+          </div>
+        </div>
+        <div class="operate">
+          <ul>
+            <dl class="comm">
+              <dt></dt>
+              <dd>956</dd>
+            </dl>
+            <dl class="collect">
+              <dt></dt>
+              <dd>1万+</dd>
+            </dl>            
+            <dl class="share">
+              <dt></dt>
+            </dl>
+          </ul>
+        </div>
+      </li>
+      <li class="vbox">
+        <div class="person">
+          <a href="" class="photo">
+            <img src = "images/hotved_ph03.jpg">
+          </a>
+          <h1>大栅栏唯一认证</h1>
+        </div>
+        <div class="vdbox">
+          <img src = "images/ved01.jpg">
+          <div class="infor">
+            <p>三里屯在北京被人们所喜爱，来源于它的气质。三里屯在北京被人们所喜爱，来源于它的气质。</p>
+          </div>
+        </div>
+        <div class="operate">
+          <ul>
+            <dl class="comm">
+              <dt></dt>
+              <dd>956</dd>
+            </dl>
+            <dl class="collect">
+              <dt></dt>
+              <dd>1万+</dd>
+            </dl>            
+            <dl class="share">
+              <dt></dt>
+            </dl>
+          </ul>
+        </div>
+      </li>
+      <li class="vbox">
+        <div class="person">
+          <a href="" class="photo">
+            <img src = "images/hotved_ph01.jpg">
+          </a>
+          <h1>毁人不倦</h1>
+        </div>
+        <div class="vdbox">
+          <img src = "images/ved01.jpg">
+          <div class="infor">
+            <p>三里屯在北京被人们所喜爱，来源于它的气质。三里屯在北京被人们所喜爱，来源于它的气质。</p>
+          </div>
+        </div>
+        <div class="operate">
+          <ul>
+            <dl class="comm">
+              <dt></dt>
+              <dd>956</dd>
+            </dl>
+            <dl class="collect">
+              <dt></dt>
+              <dd>1万+</dd>
+            </dl>            
+            <dl class="share">
+              <dt></dt>
+            </dl>
+          </ul>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+  <div class="footer">
+    <div class="menu">
+        <a href="index.html">
+          <dl>
+            <dt class="selbtn sel1"></dt>
+            <dd>首页</dd>
+          </dl>
+        </a>
+        <a href="tansuo.html">
+          <dl>
+            <dt class="selbtn sel2"></dt>
+            <dd>探索</dd>
+          </dl>
+        </a>
+        <a href="" class="takephotos"></a>
+        <a href="hotspot.html" class="active">
+          <dl>
+            <dt class="selbtn sel3"></dt>
+            <dd>热点</dd>
+          </dl>
+        </a>
+        <a href="personal.html">
+          <dl>
+            <dt class="selbtn sel4"></dt>
+            <dd>个人</dd>
+          </dl>
+        </a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
