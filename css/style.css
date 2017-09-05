@@ -207,7 +207,7 @@ input.regsub[disabled = "disabled"]{background: #c0c0c0;}
 .perinfset li{width: 100%;height: 3rem;background: #fff;border-bottom:.025rem solid #eee;}
 .perinfset li span{display: block;font-size: .7rem;color: #666;line-height: 3rem;float: left;margin-left: 1rem;width: 3.25rem;}
 .perinfset .percon{width: 9rem;float: left;line-height: 3rem;text-align: center;font-size: .7rem;color:#000;margin-left: 2rem;}
-.perinfset .percon input[type = "text"]{text-align: center;display: block;padding:1.1rem 0;text-align: left;font-size: .7rem;}
+.perinfset .percon input[type = "text"]{text-align: center;display: block;padding:1rem 0;text-align: left;font-size: .7rem;}
 .perinfset .percon.agleft input[type = "text"]{text-align: left;}
 .perinfset .percon.agleft{margin-left: 2rem;}
 .perinfset .sex{border-bottom:.025rem solid #eee;}
