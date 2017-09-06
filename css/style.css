@@ -246,6 +246,7 @@ input.regsub[disabled = "disabled"]{background: #c0c0c0;}
 #map_container{max-width: 750px;margin:0 auto;background: #fff;height: auto;overflow: hidden;}
 .fomap{z-index: 200;}
 .footer.fomap .menu{z-index: 2000;}
+<<<<<<< HEAD
 .videoplay{width: 100%;height: 10.5rem;position: relative;}
 .videoplay video{width: 100%;height: 100%;}
 .videoplay .control{}
@@ -255,3 +256,7 @@ video::-webkit-media-controls {display:none !important;}
 .btnPlay{display: block;width: 1.125rem;height: 1.3rem;position: absolute;left:50%;margin-left:-.5625rem;top:50%;margin-top:-.65rem;}
 .btnPlay.pausebtn{background: url(../images/pausebtn.png) no-repeat;background-size: contain;}
 .btnPlay.playbtn{background: url(../images/playbtn.png) no-repeat;background-size: contain;}
+=======
+.videoplay{width: 100%;height: 10.5rem;}
+.videoplay video{width: 100%;height: 100%;}
+>>>>>>> d57f8659687f6b1a9cefeaa2bc5b263842f84d48
