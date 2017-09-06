@@ -11,7 +11,8 @@
 <meta content="email=no" name="format-detection" />
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/style.css">
-<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/videoEvent.js"></script>
 <title>untitled</title>
 </head>
 <body>
@@ -39,21 +40,95 @@
 	</div>  
   <div class="hotvideo">
     <ul>
-      <li class="vbox">
+      <li class="vbox" jump_data = "tansuo_detail2.html">
         <div class="person">
           <a href="" class="photo">
             <img src = "images/hotved_ph01.jpg">
           </a>
           <h1>毁人不倦</h1>
         </div>
-        <a href="tansuo_detail2.html">
+        
           <div class="vdbox">
-            <img src = "images/ved01.jpg">
-            <div class="infor">
-              <p>三里屯在北京被人们所喜爱，来源于它的气质。三里屯在北京被人们所喜爱，来源于它的气质。</p>
+            <div class="videoplay">
+              <video id="myVideo" controls="controls" poster="images/ved01.jpg">
+                <source src="images/trailer.mp4" type="video/mp4" />
+              </video>
+              <div class="control">
+                <a href="javascript:;" class="btnPlay playbtn"></a>
+              </div>
+              <div class="progressBar">
+                 <div class="timeBar"></div>
+              </div>
             </div>
+            <!-- <div class="infor">
+              <p>三里屯在北京被人们所喜爱，来源于它的气质。三里屯在北京被人们所喜爱，来源于它的气质。</p>
+            </div> -->
           </div>
-        </a>
+        <script>
+           var video = document.getElementById('myVideo'); //or
+           var video = $('#myVideo').get(0); //or
+           var video = $('#myVideo')[0];
+          //return a jQuery object
+           var video = $('#myVideo');
+           video.on('click',function(){
+              if(video[0].currentTime == 0){
+                video[0].play();
+                $('.btnPlay').hide();
+                $('.btnPlay').removeClass('playbtn').addClass('pausebtn');
+                //视频暂未播放，点击视频区域，视频播放且播放按钮消失；
+              }
+              else if($('.btnPlay').css('display')=='block'){
+                //视频开始播放，未暂停；
+                //？再次点击，需要隐藏；
+                $('.btnPlay').hide().delay(2000).fadeOut(200);
+              }else if($('.btnPlay').css('display')=='none'){
+                //视频开始播放，未暂停；
+                //？再次点击，需要隐藏；
+                $('.btnPlay').show().delay(2000).fadeOut(200);
+              }
+              else{
+                return false;
+              }          
+           });
+           // video.on('play', function() {
+           //    $('.btnPlay').hide().removeClass('playbtn').addClass('pausebtn');
+           // });
+           $('.btnPlay').on('click', function() {
+              if(video[0].paused) {
+                video[0].play();
+                $('.btnPlay').removeClass('playbtn').addClass('pausebtn').delay(2000).fadeOut(200);
+              }
+              else {
+                video[0].pause();
+                $('.btnPlay').removeClass('pausebtn').addClass('playbtn').delay(2000).fadeOut(200);
+              }
+              return false;
+           });
+           
+           // $('.btnPlay').on('click',function(){
+           //    $('.btnPlay').fadeIn(100);
+           //    return false;
+           // });
+         // $('.btnPlay').on('click',function(){
+         //    $(this).delay(2000).fadeOut(100);
+         // });
+         
+         video.on('pause', function() {
+            $('.btnPlay').removeClass('pausebtn');
+         });
+          //get HTML5 video time duration
+          video.on('loadedmetadata', function() {
+             $('.duration').text(video[0].duration);
+          });
+          
+         //  //update HTML5 video current play time
+          video.on('timeupdate', function() {
+             var currentPos = video[0].currentTime; //Get currenttime
+             var maxduration = video[0].duration; //Get video duration
+             var percentage = 100 * currentPos / maxduration; //in %
+             $('.timeBar').css('width', percentage+'%');
+          });
+        </script>
         <div class="operate">
           <ul>
             <dl class="thumbs-up">
