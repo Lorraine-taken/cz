@@ -11,7 +11,8 @@
 <meta content="email=no" name="format-detection" />
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/style.css">
-<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/style.js"></script>
 <title>untitled</title>
 </head>
 <body>
@@ -31,10 +32,18 @@
        win.addEventListener(resizeEvt, recalc, false);
        doc.addEventListener('DOMContentLoaded', recalc, false);
 })(document, window);
+$(function(){
+  $('.clickbg').click(function(){
+    $('.mod_bg').fadeIn(200);
+    $('.maskbox').fadeIn(200);
+})
+})
+
 </script>
 <div class="container">
   <div class="permain">
     <div class="personhead" style="background:url(images/perbg.jpg) no-repeat center center;background-size: cover;">
+      <div class="clickbg"></div>
       <a href="personal_set.html" class="setbtn"><img src = "images/setbtn.png"></a>
       <div class="linear"></div>
       <div class="indivbox">
@@ -62,6 +71,14 @@
       </ul>
     </div>
   </div>
+  <div class="mod_bg">
+    <h1>更换个人封面</h1>
+    <ul>
+      <li><a href="">拍照<input class="change" type="file" accept="image/*" ></a></li>
+      <li><a href="">从相册上传<input class="change" type="file" accept="image/*" capture="camera"></a></li>
+    </ul>
+  </div>
+  <div class="maskbox"></div>
   <div class="footer">
     <div class="menu">
         <a href="index.html">
