@@ -36,7 +36,11 @@ $(function(){
   $('.clickbg').click(function(){
     $('.mod_bg').fadeIn(200);
     $('.maskbox').fadeIn(200);
-})
+  })
+  $('.maskbox').click(function(){
+    $('.mod_bg').fadeOut(200);
+    $('.maskbox').fadeOut(200);
+  })
 })
 
 </script>
@@ -74,8 +78,8 @@ $(function(){
   <div class="mod_bg">
     <h1>更换个人封面</h1>
     <ul>
-      <li><a href="">拍照<input class="change" type="file" accept="image/*" ></a></li>
-      <li><a href="">从相册上传<input class="change" type="file" accept="image/*" capture="camera"></a></li>
+      <li><a href="">拍照<input class="change" type="file" accept="image/*"  capture="camera"></a></li>
+      <li><a href="">从相册上传<input class="change" type="file" accept="image/*"></a></li>
     </ul>
   </div>
   <div class="maskbox"></div>
