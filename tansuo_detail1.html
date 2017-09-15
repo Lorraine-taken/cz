@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/style.css">
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/videoEvent.js"></script>
-<title>untitled</title>
+<title>友曰</title>
 </head>
 <body>
 <script>
@@ -75,6 +75,7 @@
                 video[0].play();
                 $('.btnPlay').hide();
                 $('.btnPlay').removeClass('playbtn').addClass('pausebtn');
+                $('.vdbox .infor').hide();
                 //视频暂未播放，点击视频区域，视频播放且播放按钮消失；
               }
               else if($('.btnPlay').css('display')=='block'){
@@ -101,6 +102,7 @@
               else {
                 video[0].pause();
                 $('.btnPlay').removeClass('pausebtn').addClass('playbtn').delay(2000).fadeOut(200);
+                $('.vdbox .infor').hide();
               }
               return false;
            });
@@ -128,19 +130,29 @@
              var percentage = 100 * currentPos / maxduration; //in %
              $('.timeBar').css('width', percentage+'%');
           });
+          $(function(){
+            $('.operate .thumbs-up').click(function(){
+              if($(this).children().hasClass('thub')){
+                $(this).children().removeClass('thub');
+              }else{
+                $(this).children().addClass('thub');
+              }              
+            })
+
+          })
         </script>
         <div class="operate">
           <ul>
             <dl class="thumbs-up">
-              <dt></dt>
+              <a href = "javascript:;" class="thumbs"><dt></dt></a>
               <dd>1万+</dd>
             </dl>
             <dl class="comm">
-              <dt></dt>
+              <a href = "tansuo_detail2.html/#"><dt></dt></a>
               <dd>956</dd>
             </dl>
             <dl class="share">
-              <dt></dt>
+              <a href = ""><dt></dt></a>
             </dl>
           </ul>
         </div>

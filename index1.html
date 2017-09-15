@@ -21,7 +21,7 @@
       }
       #container{width: 100%;height: 100%;overflow: hidden;}
     </style>
-    <title>快速入门</title>
+    <title>友曰</title>
   </head>
   <body>
 <script>
@@ -71,7 +71,13 @@
             fillColor: "#ddd", //填充色
             fillOpacity: 0.35//填充透明度
         });
-        polygon.setMap(map);        
+        polygon.setMap(map);    
+        var markers = []; //province见Demo引用的JS文件
+        for (var i = 0; i < provinces.length; i += 1) {
+          var marker = createMarker(provinces[i]);
+          markers.push(marker);
+          AMap.event.addListener(marker, 'click', _onClick);
+        }    
     </script>
       <div class="footer fomap">
     <div class="menu">
