@@ -11,7 +11,8 @@
 <meta content="email=no" name="format-detection" />
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/style.css">
-<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/PCASClass.js" charset="gb2312"></script>
 <title>友曰</title>
 </head>
 <body>
@@ -66,7 +67,9 @@
         <li>
           <span>地区</span>
           <div class="percon agleft">
-            <input type="text" value="未填写">
+            <!-- <input type="text" value="未填写"> -->
+            <select name="province" class="province"></select>
+            <select name="city" class="city"></select>
           </div>
         </li>
         <li>
@@ -91,6 +94,9 @@
         <li class="lastsub"><input type = "submit" value="确认" class="sub"></li>
       </ul>
     </div>
+    <script>
+      new PCAS("province","city");
+    </script>
   </div>
 </div>
 </body>

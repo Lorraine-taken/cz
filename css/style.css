@@ -14,7 +14,7 @@
 .discover_area .dbox h2 span.text{padding-left: 1.5rem;margin-right:.2rem;}
 .discover_area .dbox h2 em img{vertical-align: top;}
 .footer{margin-bottom: 2.45rem;}
-.footer .menu{width: 18.75rem;height: 2.45rem;left: 50%;margin-left: -9.375rem;background: #fff;position: fixed;bottom: 0;box-sizing: border-box;padding:0 .275rem;padding-top: .25rem;}
+.footer .menu{width: 18.75rem;height: 2.45rem;left: 50%;margin-left: -9.375rem;background: #fff;position: fixed;bottom: 0;box-sizing: border-box;padding:0 .275rem;padding-top: .25rem;z-index: 9999;}
 .footer .menu a{display: block;float: left;}
 .footer .menu .selbtn{width: 1.175rem;height: 1.1rem;margin:0 1.25rem;}
 .footer .menu .sel1{background: url(../images/foico01.png) no-repeat center center;background-size: contain;}
@@ -218,8 +218,8 @@ input.regsub[disabled = "disabled"]{background: #c0c0c0;}
 .perinfset{width: 17.6rem;margin:0 auto;margin-top: .6rem;}
 .perinfset li{width: 100%;height: 3rem;background: #fff;border-bottom:.025rem solid #eee;}
 .perinfset li span{display: block;font-size: .7rem;color: #666;line-height: 3rem;float: left;margin-left: 1rem;width: 3.25rem;}
-.perinfset .percon{width: 9rem;float: left;line-height: 3rem;text-align: center;font-size: .7rem;color:#000;margin-left: 2rem;}
-.perinfset .percon input[type = "text"]{text-align: center;display: block;padding:1rem 0;text-align: left;font-size: .7rem;}
+.perinfset .percon{width: 10rem;float: left;line-height: 3rem;text-align: center;font-size: .7rem;color:#000;margin-left: 2rem;}
+.perinfset .percon input[type = "text"]{text-align: left;display: block;font-size: .7rem;box-sizing: border-box;height: 2.95rem;}
 .perinfset .percon.agleft input[type = "text"]{text-align: left;}
 .perinfset .percon.agleft{margin-left: 2rem;}
 .perinfset .sex{border-bottom:.025rem solid #eee;}
@@ -321,3 +321,19 @@ video::-webkit-media-controls {display:none !important;}
 .mombox .infor h3{width: 2.25rem;height: 2.25rem;margin:0 auto;margin-top: .75rem;border-radius: 50%;overflow: hidden;}
 .collection .infor h4{color: #fff;font-size: .8rem;text-align: center;margin-top: .4rem;}
 .collection .infor h1{padding-top:2rem;}
+.commbox ul{border-top: .025rem solid #d0d0d0;margin-top: .75rem;}
+.commbox ul li{padding: .5rem 1.5rem 0 .75rem;margin-bottom: .5rem;}
+.commbox dt{width: 2rem;height: 2rem;overflow: hidden;border-radius: 50%;float: left;}
+.commbox dd{float: left;margin-left:.75rem;width: 13.7rem;position: relative;}
+.commbox dd h1{color:#ff7200;font-size: .8rem;}
+.commbox dl:after{display: block;content:'';clear: both;}
+.commbox dd > p{font-size: .7rem;color:#666;line-height: 1rem;margin-top: .5rem;}
+.commbox .reply{width: 13.7rem;height: 3.85rem;background:#f0f0f0;margin-top: .6rem;padding:.5rem .6rem;box-sizing: border-box;}
+.commbox .reply h2{color:#666;font-size: .6rem;}
+.commbox .reply p{font-size: .7rem;color:#666;line-height: 1rem;margin-top: .25rem}
+.commbox .time{color: #c0c0c0;font-size: .6rem;margin-top: .5rem;}
+.commbox .time span{margin-right:.35rem;}
+.commbox dd .dz{position: absolute;top:0;right: 0;}
+.commbox dd .dz a{display: inline-block;width: .75rem;height: .725rem;background: url(../images/hotv_ico01.png) no-repeat center center;background-size: contain;}
+.commbox dd .dz span{color:#666;font-size: .6rem;vertical-align: text-top;margin-left: .3rem;}
+.percon .province,.percon .city{float: left;width: 5rem;display: block;}
