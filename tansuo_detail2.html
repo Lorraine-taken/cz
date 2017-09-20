@@ -33,11 +33,11 @@
 })(document, window);
 </script>
 <div class="container">
-	<div class="videoplay">
-    <video src="images/trailer.mp4"  controls="false" poster="images/regbg.jpg"></video>
+	<div class="videoplay fixved">
+    <video src="images/trailer.mp4"  controls="controls"></video>
   </div>
-  <div class="vidcontent"></div>
-  <div class = "vdesec">
+  <div class="vidcontent">
+    <div class = "vdesec">
   <div class="videoinfor">
     <h1>故宫</h1>
     <h2>故宫历史悠久，明朝皇帝朱棣所建，迄今历经几百年.</h2>
@@ -131,6 +131,14 @@
     </div>
   </div>
   </div>
+  </div>
+  <script>
+    $(function() {
+        var maxScrollTop = $(window).height() - $(".vidcontent").offset().top;
+        $(".vidcontent").height(maxScrollTop);
+    });
+    //最大滚动高度值
+  </script>
   <div class = "focomm">
     <div class = "com"><em></em><input type = "text" class = "mycomm" placeholder="说点什么..."></div>
     <div class = "focoper">

@@ -336,4 +336,6 @@ video::-webkit-media-controls {display:none !important;}
 .commbox dd .dz{position: absolute;top:0;right: 0;}
 .commbox dd .dz a{display: inline-block;width: .75rem;height: .725rem;background: url(../images/hotv_ico01.png) no-repeat center center;background-size: contain;}
 .commbox dd .dz span{color:#666;font-size: .6rem;vertical-align: text-top;margin-left: .3rem;}
-.percon .province,.percon .city{float: left;width: 4.3rem;display: block;height: 2.97rem;outline: none;border:none;-webkit-appearance:none;}
+.percon .province,.percon .city{float: left;width: 4.3rem;display: block;height: 2.97rem;outline: none;border:none;-webkit-appearance:none;font-size: .7rem;}
+.fixved{position: fixed;top:0;left:0;width: 100%;height: 10.5rem;}
+.vidcontent{position: absolute;top:11rem;overflow: scroll;height: auto;}
