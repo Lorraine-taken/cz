@@ -13,4 +13,13 @@ $(function(){
 	    $(this).addClass('thub');
 	  }              
 	})
+
+	$('.hotvideo .operate .collect').click(function(){
+		if($(this).children().hasClass('done')){
+		    $(this).children().removeClass('done');
+		  }else{
+		    $(this).children().addClass('done');
+		  }              
+		})
+
 })
