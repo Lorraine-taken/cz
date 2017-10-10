@@ -20,6 +20,11 @@ $(function(){
 		  }else{
 		    $(this).children().addClass('done');
 		  }              
-		})
+	})
+
+	$('.hotvideo .operate .share').click(function(){
+		$('.showtop').addClass('top');
+
+	})
 
 })

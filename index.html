@@ -11,7 +11,7 @@
 <meta content="email=no" name="format-detection" />
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
     <style type="text/css">
       body,html,#container{
         height: 100%;
@@ -53,10 +53,81 @@
 })(document, window);
 </script>
    <div id="container" tabindex="0"></div>
-   <script src="js/markers2.js"></script>
+
    <script src="https://webapi.amap.com/maps?v=1.4.0&key=1c92ac947e24a793cd4d3b16fff074ac"></script>
    <script type="text/javascript">
     $(function(){
+      var provinces = [{
+        "name": "三里屯",
+        "center": "116.455294,39.937492",
+        "count": 25500,
+        "subDistricts": [{
+          "name": "三里屯太古里北区",
+          "center": "116.454507,39.938515",
+          "count": 100,
+          "link": "tansuo_detail2.html"
+        }, {
+          "name": "see party summer",
+          "center": "116.454229,39.936446",
+          "count": 150,
+          "link": "tansuo_detail2.html"
+        }, {
+          "name": "Apple三里屯",
+          "center": "116.454352,39.935043",
+          "count": 300,
+          "link": "tansuo_detail2.html"
+        }, {
+          "name": "渡金湖",
+          "center": "116.453794,39.938062",
+          "count": 250,
+          "link": "tansuo_detail2.html"
+        }, {
+          "name": "三里屯SOHO",
+          "center": "116.453649,39.932176",
+          "count": 150,
+          "link": "tansuo_detail2.html"
+        }, {
+          "name": "盈科大厦",
+          "center": "116.458789,39.932625",
+          "count": 350,
+          "link": "tansuo_detail2.html"
+        }, {
+          "name": "北京三里屯CHAO",
+          "center": "116.451536,39.932749",
+          "count": 150,
+          "link": "tansuo_detail2.html"
+        }, {
+          "name": "美嘉欢乐影城",
+          "center": "116.454454,39.934509",
+          "count": 100,
+          "link": "tansuo_detail2.html"
+        }]
+      }, {
+        "name": "南锣鼓巷",
+        "center": "116.403187,39.937282",
+        "count": 3400,
+        "subDistricts": [{
+          "name": "绮园花园",
+          "center": "116.404292,39.937455",
+          "count": 100,
+          "link": "tansuo_detail2.html"
+        }, {
+          "name": "南锣民俗文化馆",
+          "center": "116.403294,39.939363",
+          "count": 150,
+          "link": "tansuo_detail2.html"
+        }, {
+          "name": "僧王府",
+          "center": "116.403863,39.934312",
+          "count": 300,
+          "link": "tansuo_detail2.html"
+        }, {
+          "name": "鼓楼苑社区",
+          "center": "116.400151,39.938968",
+          "count": 250,
+          "link": "tansuo_detail2.html"
+        }]
+      }];
       var map = new AMap.Map('container', {
             resizeEnable: true,
             zoom: 14,
@@ -79,7 +150,7 @@
         marker.subMarkers = [];
         if(data.name===''||data.name===''){
           marker.setLabel({content:'&larr;请点击',offset:new AMap.Pixel(45,0)})
-          map.setCenter(marker.getPosition());
+          map.setCenter(marker.getPosition()); //当前位置设置为中心点
         }
         if(!hide){
           marker.setMap(map)
@@ -87,17 +158,26 @@
         if(data.subDistricts&&data.subDistricts.length){
           for(var i = 0 ; i<data.subDistricts.length;i+=1){
             marker.subMarkers.push(createMarker(data.subDistricts[i],true));
+
             marker.subMarkers[i].on('click',function(){
               // var url = $(this).link;
               // window.location.href=url;
               
               var url =  "tansuo_detail1.html";
               window.location.href=url;
+              
             })
           }
         };
         return marker;
       }
+      // AMap.event.addListener(marker, 'click', _jumpLink);
+      var _jumpLink = function(e) {
+        var url = e.target.link;
+        window.location.href=url;
+      }
+      
+
       var _onZoomEnd = function(e) {
         if (map.getZoom() < 6) {
           for (var i = 0; i < markers.length; i += 1) {
@@ -113,6 +193,33 @@
           map.remove(markers);
         }
       }
+      var _onGetCenter = function(){
+        var pointCenter = map.getCenter(); //获取地图中心点
+        $.ajax({
+          type:"POST",
+          url:"/js/markers2.js",
+          async:'true',
+          success:function(data){
+             $.each($.parseJSON(data),function(key,value){
+              if(map.getZoom() > 14){
+                var div = document.createElement('div');
+                div.className = 'circle';
+                div.innerHTML = value.count || 0;
+                  var marker = new AMap.Marker({
+                    content: div,
+                    title:value.name,
+                    position: value.center.split(','),
+                    offset: new AMap.Pixel(-24, 5),
+                    zIndex: value.count,
+                    map: map
+                  });
+                }              
+             })                      
+          },
+        })
+      }
+      map.on('dragend', _onGetCenter);
+
       var markers = []; //province见Demo引用的JS文件
       for (var i = 0; i < provinces.length; i += 1) {
         var marker = createMarker(provinces[i]);
@@ -122,10 +229,13 @@
       //map.setFitView();
       AMap.event.addListener(map, 'zoomend', _onZoomEnd);
     })
-      
+     
     </script>
     <!-- <script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script> -->
-    <div class="footer">
+    <div class="showpic">
+      <video id="blah" src="#" autoplay="autoplay"></video>
+    </div>
+  <div class="footer">
     <div class="menu">
         <a href="index.html" class="active">
           <dl>
@@ -139,7 +249,9 @@
             <dd>探索</dd>
           </dl>
         </a>
-        <a href="" class="takephotos"></a>
+        <a href="" class="takephotos">
+          <input class="change" id="imgInp" type="file" accept="video/*"  capture="camera">
+        </a>
         <a href="hotspot.html">
           <dl>
             <dt class="selbtn sel3"></dt>
@@ -153,6 +265,31 @@
           </dl>
         </a>
     </div>
+    <script>
+    function readURL(input) {
+
+       if (input.files && input.files[0]) {
+
+           var reader = new FileReader();
+
+           reader.onload = function (e) {
+
+               $('#blah').attr('src', e.target.result);
+
+           }
+
+           reader.readAsDataURL(input.files[0]);
+
+       }
+
+    }
+
+    $("#imgInp").change(function(){
+
+       readURL(this);
+
+    });
+    </script>
   </div>
   </body>
 </html>

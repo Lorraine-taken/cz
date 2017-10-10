@@ -28,7 +28,7 @@
     left: 1rem;
     top: -.3rem;}
 .footer .menu .active .sel4{background: url(../images/foico04h.png) no-repeat center center;background-size: contain;}
-.footer .menu .takephotos{display: block;float: left;;width: 2.5rem;height: 1.75rem;background: url(../images/photograph.png) no-repeat center center;background-size: contain;margin:0 .5rem;margin-top:.05rem;}
+.footer .menu .takephotos{display: block;float: left;;width: 2.5rem;height: 1.75rem;background: url(../images/photograph.png) no-repeat center center;background-size: contain;margin:0 .5rem;margin-top:.05rem;position: relative;}
 .footer .menu dl dd{text-align: center;font-size: .6rem;color: #666;}
 .footer .menu .active dd{color: #fd4f20;}
 .headtitle.head2{box-shadow:  0 .03rem .25rem rgba(0,0,0,.1);}
@@ -344,3 +344,20 @@ video::-webkit-media-controls {display:none !important;}
 .percon .province,.percon .city{float: left;width: 4.3rem;display: block;height: 2.97rem;outline: none;border:none;-webkit-appearance:none;font-size: .7rem;}
 .fixved{position: fixed;top:0;left:0;width: 100%;height: 10.5rem;}
 .vidcontent{position: absolute;top:11rem;overflow: scroll;height: auto;}
+.showtop{position: fixed;width: 100%;height: 11rem;background: #fff;bottom: 0;left:0;z-index: 99999;transform: translateY(100%);transition: .5s;}
+.showtop h1.tit{line-height: 2.75rem;text-align: center;font-size: .9rem;border-bottom: .025rem solid #eee;color:#000;}
+.sharemenu{box-sizing: border-box;padding:0 1.725rem;}
+.sharemenu dl{width: 3rem;float: left;padding-top: 1.8rem;margin-right: 1.1rem;}
+.sharemenu dl:last-of-type{margin-right: 0;}
+.sharemenu dl dt{width: 1.65rem;height: 1.525rem;margin:0 auto;}
+.sharemenu dl dd{text-align: center;margin-top: .4rem;font-size: .7rem;line-height: 1rem;}
+.sharemenu dl.pyq dt{width: 1.6rem;}
+.sharemenu dl.qq dt{width: 1.25rem;}
+.sharemenu dl.wb dt{width: 1.65rem;}
+.showtop.top{transform: translateY(0)}
+.takephotos .change{display: block;position: absolute;width: 100%;height:100%;opacity: 0;top:0;left:0;}
+.showpic{width: 200px;height: 200px;background: #ddd;}
+.vidcon{width: 100%;height: 10.5rem;background: #ffcfcf;}
+.uplist:before{display: block;content: "";width: 100%;height: .5rem;background: #f0f0f0;}
+.input_tit{height:2.45rem;width: 17.75rem;margin:0 auto;border-bottom:.05rem solid #f0f0f0;}
+.input_tit input{padding:.9rem .5rem;font-size: .7rem;}
